@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Quiz</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header container">
+            <h1>Triangle Quiz</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="tabs">
+                <div class="active-indicator"></div>
+                <div class="tab active">Angles of Triangle</div>
+                <div class="tab">Check hypotenuse</div>
+                <div class="tab">Calculate Area</div>
+                <div class="tab">Take a Quiz</div>
+            </div>
+            <div class="contents">
+                <div class="content active">
+                    <h2>Enter the angles in below input boxes and we will tell you if those angles make a Triangle</h2>
+                    <form action="#">
+                        <div class="form-control">
+                            <label for="first-angle">Enter first angle</label>
+                            <input type="number" placeholder="first angle" id="first-angle" class="box" min="0"
+                                max="360">
+                        </div>
+                        <div class="form-control">
+                            <label for="second-angle">Enter second angle</label>
+                            <input type="number" placeholder="second angle" id="second-angle" class="box" min="0"
+                                max="360">
+                        </div>
+                        <div class="form-control">
+                            <label for="third-angle">Enter third angle</label>
+                            <input type="number" placeholder="third angle" id="third-angle" class="box" min="0"
+                                max="360">
+                        </div>
+                        <div class="form-control">
+                            <input type="submit" class="btn" id="angle-btn" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <h2>Check hypotenuse</h2>
+                    <form action="#">
+                        <div class="form-control">
+                            <label for="base">Enter base length</label>
+                            <input type="number" placeholder="Base length" id="base" class="box">
+                        </div>
+                        <div class="form-control">
+                            <label for="second-angle">Enter height length</label>
+                            <input type="number" placeholder="Height length" id="height" class="box">
+                        </div>
+                        <div class="form-control">
+                            <input type="submit" class="btn" id="hypotenuse-btn" value="Find hypotenuse">
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <h2>Calculate Area</h2>
+
+                </div>
+                <div class="content">
+                    <h1>Take a Quiz</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas optio quibusdam iusto!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>

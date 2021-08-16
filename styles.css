@@ -142,6 +142,16 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.inline-label {
+  margin: 0;
+  margin-left: 0.5em;
+}
+
 .btn {
   max-width: 25%;
   margin: 2em 0;

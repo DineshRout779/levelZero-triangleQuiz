@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triangle Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Fun with &#x25B3; </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
         <div class="header container">
-            <h1>Triangle Quiz</h1>
+            <h1>Fun With &#x25B3;s</h1>
         </div>
     </header>
     <main>
         <div class="container">
             <div class="tabs">
                 <div class="active-indicator"></div>
-                <div class="tab active">Angles of &#x25B3;</div>
+                <div class="tab">Angles of &#x25B3;</div>
                 <div class="tab">Check hypotenuse</div>
                 <div class="tab">Calculate Area</div>
                 <div class="tab">Take a Quiz</div>
@@ -28,6 +28,7 @@
             <div class="content-container">
                 <div class="content active">
                     <h1>Is Triangle?</h1>
+                    <small>Enter three angles and check if they make a traingle.</small>
                     <form action="#" class="form">
                         <div class="form-group">
                             <label for="first-angle">Enter first angle</label>
@@ -46,9 +47,29 @@
                         </div>
                         <input type="submit" value="Check" class="form-control btn" id="angle-btn">
                     </form>
+                    <div class="output" id="angle-output"></div>
                 </div>
                 <div class="content">
-                    <h1>Check hypotenuse</h1>
+                    <h1>Find hypotenuse</h1>
+                    <small>Length of Hypotenuse = sqrt(base² + perpendicular²)</small>
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="base">Enter base length</label>
+                            <input type="number" placeholder="Base length" id="base" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="second-angle">Enter perpendicular length</label>
+                            <input type="number" placeholder="Perpendicular length" id="height" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="form-control btn" id="hypotenuse-btn" value="Find hypotenuse">
+                        </div>
+                    </form>
+                    <div class="output" id="hypotenuse-output"></div>
+                </div>
+                <div class="content">
+                    <h1>Calculate Area</h1>
+                    <small>Area of a triangle = 1/2(Base * Height)</small>
                     <form action="#">
                         <div class="form-group">
                             <label for="base">Enter base length</label>
@@ -62,14 +83,12 @@
                             <input type="submit" class="form-control btn" id="hypotenuse-btn" value="Find hypotenuse">
                         </div>
                     </form>
-                </div>
-                <div class="content">
-                    <h2>Calculate Area</h2>
-
+                    <div class="output" id="area-output"></div>
                 </div>
                 <div class="content">
                     <h1>Take a Quiz</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas optio quibusdam iusto!</p>
+                    <div class="output" id="quiz-output"></div>
                 </div>
             </div>
         </div>

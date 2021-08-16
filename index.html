@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triangle Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -19,48 +20,46 @@
         <div class="container">
             <div class="tabs">
                 <div class="active-indicator"></div>
-                <div class="tab active">Angles of Triangle</div>
+                <div class="tab active">Angles of &#x25B3;</div>
                 <div class="tab">Check hypotenuse</div>
                 <div class="tab">Calculate Area</div>
                 <div class="tab">Take a Quiz</div>
             </div>
-            <div class="contents">
+            <div class="content-container">
                 <div class="content active">
-                    <h2>Enter the angles in below input boxes and we will tell you if those angles make a Triangle</h2>
-                    <form action="#">
-                        <div class="form-control">
+                    <h1>Is Triangle?</h1>
+                    <form action="#" class="form">
+                        <div class="form-group">
                             <label for="first-angle">Enter first angle</label>
-                            <input type="number" placeholder="first angle" id="first-angle" class="box" min="0"
+                            <input type="number" placeholder="first angle" id="first-angle" class="form-control" min="0"
                                 max="360">
                         </div>
-                        <div class="form-control">
+                        <div class="form-group">
                             <label for="second-angle">Enter second angle</label>
-                            <input type="number" placeholder="second angle" id="second-angle" class="box" min="0"
-                                max="360">
+                            <input type="number" placeholder="second angle" id="second-angle" class="form-control"
+                                min="0" max="360">
                         </div>
-                        <div class="form-control">
+                        <div class="form-group">
                             <label for="third-angle">Enter third angle</label>
-                            <input type="number" placeholder="third angle" id="third-angle" class="box" min="0"
+                            <input type="number" placeholder="third angle" id="third-angle" class="form-control" min="0"
                                 max="360">
                         </div>
-                        <div class="form-control">
-                            <input type="submit" class="btn" id="angle-btn" value="Submit">
-                        </div>
+                        <input type="submit" value="Check" class="form-control btn" id="angle-btn">
                     </form>
                 </div>
                 <div class="content">
-                    <h2>Check hypotenuse</h2>
+                    <h1>Check hypotenuse</h1>
                     <form action="#">
-                        <div class="form-control">
+                        <div class="form-group">
                             <label for="base">Enter base length</label>
-                            <input type="number" placeholder="Base length" id="base" class="box">
+                            <input type="number" placeholder="Base length" id="base" class="form-control">
                         </div>
-                        <div class="form-control">
+                        <div class="form-group">
                             <label for="second-angle">Enter height length</label>
-                            <input type="number" placeholder="Height length" id="height" class="box">
+                            <input type="number" placeholder="Height length" id="height" class="form-control">
                         </div>
-                        <div class="form-control">
-                            <input type="submit" class="btn" id="hypotenuse-btn" value="Find hypotenuse">
+                        <div class="form-group">
+                            <input type="submit" class="form-control btn" id="hypotenuse-btn" value="Find hypotenuse">
                         </div>
                     </form>
                 </div>

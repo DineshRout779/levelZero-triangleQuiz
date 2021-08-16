@@ -1,6 +1,7 @@
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.content');
 const tabIndicator = document.querySelector('.active-indicator');
+const outputDivs = document.querySelectorAll('.output');
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', () => {
@@ -8,6 +9,14 @@ for (let i = 0; i < tabs.length; i++) {
     switchTab(i); //add active to current tab
   });
 }
+
+const clearOutput = () => {
+  for (let i = 0; i < outputDivs.length; i++) {
+    if (outputDivs[i].innerHTML !== '') {
+      outputDivs[i].innerHTML = '';
+    }
+  }
+};
 
 const removeActive = () => {
   for (let i = 0; i < tabs.length; i++) {
@@ -17,6 +26,7 @@ const removeActive = () => {
 };
 
 const switchTab = (i) => {
+  clearOutput();
   tabs[i].classList.add('active');
   contents[i].classList.add('active');
   tabIndicator.style.left = `${(100 / tabs.length) * i}%`;

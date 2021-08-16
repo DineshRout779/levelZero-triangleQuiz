@@ -56,6 +56,23 @@ const findHypotenuse = (b, p) => {
   hypotenuseOutput.innerHTML = `<h2>Hypotenuse length is ${h}</h2>`;
 };
 
+let baseOfTriangle = document.querySelector('#base-of-triangle');
+let heightOfTriangle = document.querySelector('#height-of-triangle');
+let areaBtn = document.querySelector('#area-btn');
+let areaOutput = document.querySelector('#area-output');
+
+const findArea = (b, h) => {
+  let a = 0.5 * (b * h);
+  areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a}</h2>`;
+};
+
+areaBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (baseOfTriangle.value !== '' && heightOfTriangle.value !== '') {
+    findArea(baseOfTriangle.value, heightOfTriangle.value);
+  }
+});
+
 hypotenuseBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (bLength.value !== '' && pLength.value !== '') {

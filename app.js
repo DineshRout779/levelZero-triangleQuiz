@@ -46,6 +46,23 @@ const isTriangle = (angle1, angle2, angle3) => {
   }
 };
 
+let bLength = document.querySelector('#base');
+let pLength = document.querySelector('#height');
+let hypotenuseBtn = document.querySelector('#hypotenuse-btn');
+let hypotenuseOutput = document.querySelector('#hypotenuse-output');
+
+const findHypotenuse = (b, p) => {
+  let h = Math.sqrt(b * b + p * p);
+  hypotenuseOutput.innerHTML = `<h2>Hypotenuse length is ${h}</h2>`;
+};
+
+hypotenuseBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (bLength.value !== '' && pLength.value !== '') {
+    findHypotenuse(bLength.value, pLength.value);
+  }
+});
+
 angleBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (

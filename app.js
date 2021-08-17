@@ -32,8 +32,6 @@ const switchTab = (i) => {
   tabIndicator.style.left = `${(100 / tabs.length) * i}%`;
 };
 
-window.addEventListener('load', switchTab(0));
-
 let firstAngle = document.querySelector('#first-angle');
 let secondAngle = document.querySelector('#second-angle');
 let thirdAngle = document.querySelector('#third-angle');
@@ -68,7 +66,7 @@ const findHypotenuse = (b, p) => {
 
 let baseOfTriangle = document.querySelector('#base-of-triangle');
 let heightOfTriangle = document.querySelector('#height-of-triangle');
-let areaBtn = document.querySelector('#area-btn');
+const areaBtn = document.querySelector('#area-btn');
 let areaOutput = document.querySelector('#area-output');
 
 const findArea = (b, h) => {
@@ -76,6 +74,54 @@ const findArea = (b, h) => {
   areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a}</h2>`;
 };
 
+let firstAns = document.querySelectorAll('input[name="first-ans"]');
+let secondAns = document.querySelectorAll('input[name="second-ans"]');
+const quizBtn = document.querySelector('#quiz-btn');
+let quizOutput = document.querySelector('#quiz-output');
+
+const correctAns = ['90', 'right-angled'];
+
+const showScore = (score) => {
+  quizOutput.innerHTML = `<h2>Your score is ${score}`;
+};
+
+const findScore = (selectedAns) => {
+  let score = 0;
+  if (selectedAns.length === 0) {
+    quizOutput.innerHTML = 'please choose answers!!';
+  } else {
+    for (let i = 0; i < selectedAns.length; i++) {
+      if (selectedAns[i] === correctAns[i]) {
+        score++;
+      }
+    }
+    showScore(score);
+  }
+};
+
+const collectAnswers = () => {
+  let selectedAns = [];
+  for (let i = 0; i < firstAns.length; i++) {
+    if (firstAns[i].checked) {
+      selectedAns.push(firstAns[i].value);
+      break;
+    }
+  }
+  for (let i = 0; i < secondAns.length; i++) {
+    if (secondAns[i].checked) {
+      selectedAns.push(secondAns[i].value);
+      break;
+    }
+  }
+  findScore(selectedAns);
+};
+
+quizBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  collectAnswers();
+});
+
+// area button
 areaBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (baseOfTriangle.value !== '' && heightOfTriangle.value !== '') {
@@ -83,6 +129,7 @@ areaBtn.addEventListener('click', (e) => {
   }
 });
 
+// hypotenuse button
 hypotenuseBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (bLength.value !== '' && pLength.value !== '') {
@@ -90,6 +137,7 @@ hypotenuseBtn.addEventListener('click', (e) => {
   }
 });
 
+// angle button
 angleBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (
@@ -100,3 +148,5 @@ angleBtn.addEventListener('click', (e) => {
     isTriangle(firstAngle.value, secondAngle.value, thirdAngle.value);
   }
 });
+
+window.addEventListener('load', switchTab(0));

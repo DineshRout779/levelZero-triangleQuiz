@@ -43,7 +43,6 @@ const isTriangle = (angle1, angle2, angle3) => {
   angle2 = Number(angle2);
   angle3 = Number(angle3);
   let sum = angle1 + angle2 + angle3;
-  console.log(sum);
   if (sum === 180) {
     angleOutput.style.color = 'green';
     angleOutput.innerHTML = '<h2>Yayy!! This angles make a &#x25B3;</h2>';

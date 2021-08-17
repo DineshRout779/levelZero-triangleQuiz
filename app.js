@@ -47,10 +47,12 @@ const isTriangle = (angle1, angle2, angle3) => {
   if (sum === 180) {
     angleOutput.style.color = 'green';
     angleOutput.innerHTML = '<h2>Yayy!! This angles make a &#x25B3;</h2>';
+    window.scrollTo(0, document.body.scrollHeight);
   } else {
     angleOutput.style.color = 'red';
     angleOutput.innerHTML =
       '<h2>No!! Thease angles do not form a &#x25B3;</h2>';
+    window.scrollTo(0, document.body.scrollHeight);
   }
 };
 
@@ -62,6 +64,7 @@ let hypotenuseOutput = document.querySelector('#hypotenuse-output');
 const findHypotenuse = (b, p) => {
   let h = Math.sqrt(b * b + p * p);
   hypotenuseOutput.innerHTML = `<h2>Hypotenuse length is ${h}</h2>`;
+  window.scrollTo(0, document.body.scrollHeight);
 };
 
 let baseOfTriangle = document.querySelector('#base-of-triangle');
@@ -72,6 +75,7 @@ let areaOutput = document.querySelector('#area-output');
 const findArea = (b, h) => {
   let a = 0.5 * (b * h);
   areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a}</h2>`;
+  window.scrollTo(0, document.body.scrollHeight);
 };
 
 let firstAns = document.querySelectorAll('input[name="first-ans"]');
@@ -83,6 +87,7 @@ const correctAns = ['90', 'right-angled'];
 
 const showScore = (score) => {
   quizOutput.innerHTML = `<h2>Your score is ${score}`;
+  window.scrollTo(0, document.body.scrollHeight);
 };
 
 const findScore = (selectedAns) => {
@@ -116,6 +121,7 @@ const collectAnswers = () => {
   findScore(selectedAns);
 };
 
+// quiz button
 quizBtn.addEventListener('click', (e) => {
   e.preventDefault();
   collectAnswers();

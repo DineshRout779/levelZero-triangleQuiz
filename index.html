@@ -93,9 +93,10 @@
                 </div>
                 <div class="content">
                     <h1>Take a Quiz</h1>
+                    <small>Test your knowledge on &#x25B3;s</small>
                     <form action="#" class="form">
                         <div class="form-group">
-                            <p>What is the third angle for the triangle where angle1 = 45° and
+                            <p class="que">1. What is the third angle for the triangle where angle1 = 45° and
                                 angle2 =
                                 45°?</p>
                             <div class="flex">
@@ -112,26 +113,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <p>If a triangle has an angle of 90 degrees, what is it called?</p>
+                            <p class="que">2. If a triangle has an angle of 90 degrees, what is it called?</p>
                             <div class="flex">
-                                <input type="radio" name="first-ans" id="first-ans" value='45'>
-                                <label for="first-ans" class="inline-label">45<sup>o</sup></label>
+                                <input type="radio" name="second-que" id="second-que-first-ans" value='obtuse '>
+                                <label for="second-que-first-ans" class="inline-label">obtuse</label>
                             </div>
                             <div class="flex">
-                                <input type="radio" name="first-ans" id="second-ans" value='60'>
-                                <label for="second-ans" class="inline-label">60<sup>o</sup></label>
+                                <input type="radio" name="second-que" id="second-que-second-ans" value='acute'>
+                                <label for="second-que-second-ans" class="inline-label">acute</label>
                             </div>
                             <div class="flex">
-                                <input type="radio" name="first-ans" id="third-ans" value='90'>
-                                <label for="third-ans" class="inline-label">90<sup>o</sup></label>
+                                <input type="radio" name="second-que" id="second-que-third-ans" value='right-angled'>
+                                <label for="second-que-third-ans" class="inline-label">right-angled</label>
                             </div>
                         </div>
                         <div class="form-group btn-group">
-                            <input type="submit" class="form-control btn" id="quiz-btn" value="Calculate Result">
+                            <input type="submit" class="form-control btn" id="quiz-btn" value="Submit">
                             <input type="reset" value="Reset" class="form-control btn btn-rev">
                         </div>
                     </form>
-
                     <div class="output" id="quiz-output"></div>
                 </div>
             </div>

@@ -160,11 +160,7 @@ angleBtn.addEventListener('click', (e) => {
     secondAngle.value !== '' &&
     thirdAngle.value !== ''
   ) {
-    if (
-      firstAngle.value >= 0 &&
-      secondAngle.value >= 0 &&
-      thirdAngle.value >= 0
-    )
+    if (firstAngle.value > 0 && secondAngle.value > 0 && thirdAngle.value > 0)
       isTriangle(firstAngle.value, secondAngle.value, thirdAngle.value);
     else {
       angleOutput.innerHTML = '<h2>Please enter valid angles</h2>';

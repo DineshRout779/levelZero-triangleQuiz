@@ -73,7 +73,7 @@ let areaOutput = document.querySelector('#area-output');
 
 const findArea = (b, h) => {
   let a = 0.5 * (b * h);
-  areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a}</h2>`;
+  areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a} units</h2>`;
   window.scrollTo(0, document.body.scrollHeight);
 };
 
@@ -130,7 +130,12 @@ quizBtn.addEventListener('click', (e) => {
 areaBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (baseOfTriangle.value !== '' && heightOfTriangle.value !== '') {
-    findArea(baseOfTriangle.value, heightOfTriangle.value);
+    if (baseOfTriangle.value > 0 && heightOfTriangle.value > 0) {
+      findArea(baseOfTriangle.value, heightOfTriangle.value);
+    } else {
+      areaOutput.innerHTML = `<h2>Please enter valid non-zero values</h2>`;
+      window.scrollTo(0, document.body.scrollHeight);
+    }
   }
 });
 
@@ -138,7 +143,12 @@ areaBtn.addEventListener('click', (e) => {
 hypotenuseBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (bLength.value !== '' && pLength.value !== '') {
-    findHypotenuse(bLength.value, pLength.value);
+    if (bLength.value > 0 && pLength.value > 0) {
+      findHypotenuse(bLength.value, pLength.value);
+    } else {
+      hypotenuseOutput.innerHTML = `<h2>Please enter valid non-zero values</h2>`;
+      window.scrollTo(0, document.body.scrollHeight);
+    }
   }
 });
 
@@ -150,7 +160,16 @@ angleBtn.addEventListener('click', (e) => {
     secondAngle.value !== '' &&
     thirdAngle.value !== ''
   ) {
-    isTriangle(firstAngle.value, secondAngle.value, thirdAngle.value);
+    if (
+      firstAngle.value >= 0 &&
+      secondAngle.value >= 0 &&
+      thirdAngle.value >= 0
+    )
+      isTriangle(firstAngle.value, secondAngle.value, thirdAngle.value);
+    else {
+      angleOutput.innerHTML = '<h2>Please enter valid angles</h2>';
+      window.scrollTo(0, document.body.scrollHeight);
+    }
   }
 });
 

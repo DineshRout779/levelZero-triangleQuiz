@@ -21,8 +21,16 @@ h1 {
   font-weight: 300;
 }
 
+a {
+  display: inline-block;
+}
+
 header {
   padding: 1em 0;
+}
+
+main {
+  position: relative;
 }
 
 .container {
@@ -179,6 +187,14 @@ input[type='number'] {
 .output h2 {
   font-weight: 300;
   text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer a {
+  margin: 0 1em;
 }
 
 @media (max-width: 520px) {

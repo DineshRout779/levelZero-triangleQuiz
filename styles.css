@@ -1,5 +1,6 @@
 :root {
   --primary-blue: rgb(43, 85, 223);
+  scroll-behavior: smooth;
 }
 
 *,

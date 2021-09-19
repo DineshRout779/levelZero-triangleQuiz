@@ -147,6 +147,10 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+.que {
+  font-weight: bold;
+}
+
 .flex {
   display: flex;
   align-items: center;

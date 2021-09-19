@@ -67,7 +67,9 @@ let hypotenuseOutput = document.querySelector('#hypotenuse-output');
 
 const findHypotenuse = (b, p) => {
   let h = Math.sqrt(b * b + p * p);
-  hypotenuseOutput.innerHTML = `<h2>Hypotenuse length is ${h}</h2>`;
+  hypotenuseOutput.innerHTML = `<h2>Hypotenuse length is ${h.toFixed(
+    2
+  )} units</h2>`;
   window.scrollTo(0, document.body.scrollHeight);
 };
 
@@ -78,16 +80,19 @@ let areaOutput = document.querySelector('#area-output');
 
 const findArea = (b, h) => {
   let a = 0.5 * (b * h);
-  areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a} units</h2>`;
+  areaOutput.innerHTML = `<h2>Area of &#x25B3; is ${a.toFixed(2)} units</h2>`;
   window.scrollTo(0, document.body.scrollHeight);
 };
 
 let firstAns = document.querySelectorAll('input[name="first-ans"]');
 let secondAns = document.querySelectorAll('input[name="second-ans"]');
+let thirdAns = document.querySelectorAll('input[name="third-ans"]');
+let fourthAns = document.querySelectorAll('input[name="fourth-ans"]');
+let fifthAns = document.querySelectorAll('input[name="fifth-ans"]');
 const quizBtn = document.querySelector('#quiz-btn');
 let quizOutput = document.querySelector('#quiz-output');
 
-const correctAns = ['90', 'right-angled'];
+const correctAns = ['90degree', 'right-angled', '13', 'median', 'two-sides'];
 
 const showScore = (score) => {
   quizOutput.innerHTML = `<h2>Your score is ${score}`;
@@ -98,9 +103,13 @@ const findScore = (selectedAns) => {
   let score = 0;
   if (selectedAns.length === 0) {
     quizOutput.innerHTML = 'please choose answers!!';
+    window.scrollTo(0, document.body.scrollHeight);
   } else {
     for (let i = 0; i < selectedAns.length; i++) {
-      if (selectedAns[i] === correctAns[i]) {
+      // if (selectedAns[i] === correctAns[i]) {
+      //   score++;
+      // }
+      if (correctAns.includes(selectedAns[i])) {
         score++;
       }
     }
@@ -119,6 +128,24 @@ const collectAnswers = () => {
   for (let i = 0; i < secondAns.length; i++) {
     if (secondAns[i].checked) {
       selectedAns.push(secondAns[i].value);
+      break;
+    }
+  }
+  for (let i = 0; i < thirdAns.length; i++) {
+    if (thirdAns[i].checked) {
+      selectedAns.push(thirdAns[i].value);
+      break;
+    }
+  }
+  for (let i = 0; i < fourthAns.length; i++) {
+    if (fourthAns[i].checked) {
+      selectedAns.push(fourthAns[i].value);
+      break;
+    }
+  }
+  for (let i = 0; i < fifthAns.length; i++) {
+    if (fifthAns[i].checked) {
+      selectedAns.push(fifthAns[i].value);
       break;
     }
   }

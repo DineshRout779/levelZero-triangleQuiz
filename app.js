@@ -2,6 +2,7 @@ const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.content');
 const tabIndicator = document.querySelector('.active-indicator');
 const outputDivs = document.querySelectorAll('.output');
+const resetBtns = document.querySelectorAll('.reset');
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', () => {
@@ -17,6 +18,10 @@ const clearOutput = () => {
     }
   }
 };
+
+for (let i = 0; i < resetBtns.length; i++) {
+  resetBtns[i].addEventListener('click', clearOutput);
+}
 
 const removeActive = () => {
   for (let i = 0; i < tabs.length; i++) {

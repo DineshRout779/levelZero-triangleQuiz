@@ -1,2 +1,2 @@
 # levelZero-triangleQuiz
-How to much do you know about traingles?
+How much do you know about traingles?
